@@ -1,0 +1,590 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    width: 8px;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: goldenrod;
+  }
+
+/* SPLASH SCREEN */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensures it stays above other content */
+    transition: opacity 1s ease-out; /* Smooth fade-out */
+}
+
+#splash-logo {
+    width: 30vw; /* Adjust size as needed */
+    animation: fadeIn 1s ease-out; /* Fade-in animation for the logo */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* DESKTOP NAV */
+#desktop-nav {
+    position: fixed; /* Fixes the navbar to the top of the viewport */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
+    background-color: black; /* Ensures the navbar has a solid background */
+    border-bottom: 0.5rem solid white;
+    height: fit-content; /* Adjust if needed */
+}
+
+.logo img{
+    height: 17vh;
+}
+
+.logo {
+    padding-top: 1rem;
+    height: 17vh;
+}
+
+nav, .nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+    border-bottom: 0.5rem solid white;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 2.5rem;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: goldenrod;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+/* HAMBURGER MENU */
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: fixed; /* Make sure it's positioned relative to the viewport */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    background-color: black;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height if you want it to cover the entire viewport */
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack the links vertically */
+    align-items: center;
+    margin-top: 8.5rem;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+.hamburger-icon span:first-child {
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+/* BODY */
+.video-container {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 50rem;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    padding-top: 11rem;
+}
+
+/* ABOUT */
+#about {
+    margin-top: 3rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-header {
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 6rem;
+    transition: all 1.5s ease;
+    position: relative;
+    text-shadow:
+        1px 1px 0 white,   /* Right and down */
+        -1px -1px 0 white, /* Left and up */
+        -1px 1px 0 white,  /* Left and down */
+        1px -1px 0 white,  /* Right and up */
+        1px 0 0 white,     /* Right */
+        -1px 0 0 white,    /* Left */
+        0 1px 0 white,     /* Down */
+        0 -1px 0 white;    /* Up */
+    letter-spacing: 3px;
+}
+
+#about-header.enlarged {
+    color: white;
+    letter-spacing: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+
+/* ABOUT CARDS */
+.title h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(38px, 5vw, 48px);
+    color: goldenrod;
+    white-space: nowrap;
+    margin-top: -1rem;
+    transform: rotate(-90deg) translateX(-350px);
+    background-color: transparent;
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black;
+}
+
+.card:hover h2 {
+    padding-bottom: 0.5em;
+    transform: unset;
+}
+
+.card-body p {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out;
+    background-color: transparent;
+    font-family: roboto;
+}
+
+
+
+.card:hover p {
+    position: relative;
+    opacity: 1;
+    max-height: 100%;
+    transition-delay: 0.5s;
+    color: black;
+    font-weight: bold;
+    text-shadow:
+        1px 1px 0 white,   /* Right and down */
+        -1px -1px 0 white, /* Left and up */
+        -1px 1px 0 white,  /* Left and down */
+        1px -1px 0 white,  /* Right and up */
+        1px 0 0 white,     /* Right */
+        -1px 0 0 white,    /* Left */
+        0 1px 0 white,     /* Down */
+        0 -1px 0 white;    /* Up */
+}
+
+
+.cards {
+    flex-wrap: wrap;
+    gap: 1vw;
+    padding: 2em 0;
+}
+
+.card {
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    width: 20vw;
+    height: 60vh;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-image: url(assets/empty-gb.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    transition: width 0.5s ease-in-out;
+}
+
+.card:nth-of-type(2) {
+    background-image: url(assets/mono.png);
+}
+
+.card:nth-of-type(3) {
+    background-image: url(assets/coaches.png);
+}
+
+.card:nth-of-type(4) {
+    background-image: url(assets/wsbb.png);
+}
+
+.card:hover {
+    width: 32vw;
+    box-shadow: 2px 11px 26px -4px white;
+-webkit-box-shadow: 2px 11px 26px -4px white;
+-moz-box-shadow: 2px 11px 26px -4px white;
+}
+
+.card-body {
+    background: linear-gradient(180deg, rgba(45, 45, 45, 0) 70%, #2d2d2d 100%);
+    padding: 4em;
+}
+
+
+.title {
+    background: linear-gradient(180deg, rgba(45, 45, 45, 0)0%, #2d2d2d 100%);
+    position: absolute;
+    inset: 0;
+}
+
+.card:hover .title {
+    all: unset;
+}
+
+/* SERVICES */
+#services {
+    margin-top: 5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#services-header {
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 6rem;
+    transition: all 1.5s ease;
+    position: relative;
+    text-shadow:
+        1px 1px 0 white,   /* Right and down */
+        -1px -1px 0 white, /* Left and up */
+        -1px 1px 0 white,  /* Left and down */
+        1px -1px 0 white,  /* Right and up */
+        1px 0 0 white,     /* Right */
+        -1px 0 0 white,    /* Left */
+        0 1px 0 white,     /* Down */
+        0 -1px 0 white;    /* Up */
+    letter-spacing: 3px;
+}
+
+#services-header.enlarged {
+    color: white;
+    letter-spacing: 10px;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 50rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    height: 50rem;
+}
+
+.slider {
+    position: absolute;
+    inset: 80px 200px 80px 80px;
+}
+
+.slider .slides {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    height: 320px;
+    background: var(--img);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 25px 50px rgba(10, 10, 10, 0.767);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2)
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(0);
+    box-shadow: 0 25px 50px rgba(207, 206, 206, 0);
+    background-size: cover;
+}
+
+.slider .slides:nth-child(3) {
+    left: calc(50% + 240px);
+    background-size: cover;
+    opacity: 0.95;
+}
+
+.slider .slides:nth-child(4) {
+    left: calc(50% + 500px);
+    background-size: cover;
+    opacity: 0.85;
+}
+.slider .slides:nth-child(5) {
+    left: calc(50% + 760px);
+    background-size: cover;
+    opacity: 0.75;
+}
+.slider .slides:nth-child(6) {
+    left: calc(50% + 1020px);
+    background-size: cover;
+    opacity: 0;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    gap: 50px;
+    background-color: transparent;
+}
+
+.buttons span {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: goldenrod;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.buttons span::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    transform: rotate(315deg) translate(2px, 2px);
+}
+
+.buttons span:nth-child(2):before {
+    transform: rotate(135deg) translate(2px, 2px);
+}
+
+.buttons span:active {
+    opacity: 0.5;
+}
+
+
+
+.content {
+    position: relative;
+    padding: 40px;
+    max-width: 600px;
+    background-color: transparent;
+    transition: 0.25s;
+    transition-delay: 0;
+    transform: translateY(40px);
+    opacity: 0;
+}
+
+.content h2 {
+    background-color: transparent;
+    font-family: "Bebas Neue", sans-serif;
+    color: goldenrod;
+    font-size: 4em;
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black;
+    white-space: nowrap;
+}
+
+.content p {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow:
+        1px 1px 0 white,   /* Right and down */
+        -1px -1px 0 white, /* Left and up */
+        -1px 1px 0 white,  /* Left and down */
+        1px -1px 0 white,  /* Right and up */
+        1px 0 0 white,     /* Right */
+        -1px 0 0 white,    /* Left */
+        0 1px 0 white,     /* Down */
+        0 -1px 0 white;    /* Up */
+}
+
+.slider .slides:nth-child(1) .content,
+.slider .slides:nth-child(2) .content
+{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.5s;
+}
+
+
+/* FOOTER */
+.footer {
+    position: absolute;
+    top: 300rem;
+    height: 20rem;
+    display: flex;
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    margin-top: 3rem;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-top: 2px solid white;
+    padding-top: 2rem;
+}
+
+#footer-header {
+    font-size: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+#ig-logo {
+    margin-top: 1rem;
+    height: 3rem;
+    border-radius: 20px;
+    transition: height 0.1s ease-in-out;
+}
+
+#ig-logo:hover {
+    height: 3.2rem;
+    box-shadow: 2px 11px 26px -4px white;
+-webkit-box-shadow: 2px 11px 26px -4px white;
+-moz-box-shadow: 2px 11px 26px -4px white;
+}

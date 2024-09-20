@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GNARBELL | El Dorado, KS</title>
+    <link rel="icon" href="assets/gb-logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <div id="splash-screen">
+        <img src="assets/gb-logo.png" alt="The Gnarbell Logo" id="splash-logo">
+    </div>
+    <nav id="desktop-nav">
+        <div class="logo">
+            <img src="assets/gb-logo.png" alt="The Gnarbell Logo">
+        </div>
+        <div class="navlink-bg">
+            <ul class="nav-links">
+                <li><a href="">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="">Memberships</a></li>
+                <li><a href="">Gear</a></li>
+                <li><a href="https://open.spotify.com/show/7EkthfJAwtqKFGWsKhFS9V?si=f246c5f51ec040c7" target="_blank" rel="noopener noreferrer">Podcast</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">
+            <img src="assets/gb-logo.png" alt="The Gnarbell Logo">
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+                <li><a href="" onclick="toggleMenu()">Memberships</a></li>
+                <li><a href="" onclick="toggleMenu()">Gear</a></li>
+                <li><a href="https://open.spotify.com/show/7EkthfJAwtqKFGWsKhFS9V?si=f246c5f51ec040c7" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">Podcast</a></li>
+            </div>
+        </div>
+    </nav>
+    <div class="video-container">
+        <video src="assets/gb-video.MOV" autoplay loop muted></video>
+    </div>
+    <section id="about">
+        <h2 id="about-header">About</h2>
+        <div class="cards row">
+            <div class="card row">
+                <div class="card-body">
+                    <div class="title">
+                        <h2>Gym</h2>
+                    </div>
+                    <p>Private 24/7 Access Gym
+                        <br>
+                        <br>
+                        Equipped for equipped and raw powerlifters, sports performance, and general strength and conditioning.
+                    </p>
+                </div>
+            </div>
+            <div class="card row">
+                <div class="card-body">
+                    <div class="title">
+                        <h2>Equipment</h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dicta! Qui libero
+                         eveniet illum earum, ad beatae ab blanditiis atque fugit nemo corporis magnam reiciendis, dolorem similique voluptas dolore itaque!</p>
+                </div>
+            </div>
+            <div class="card row">
+                <div class="card-body">
+                    <div class="title">
+                        <h2>Coaching</h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dicta! Qui libero
+                         eveniet illum earum, ad beatae ab blanditiis atque fugit nemo corporis magnam reiciendis, dolorem similique voluptas dolore itaque!</p>
+                </div>
+            </div>
+            <div class="card row">
+                <div class="card-body">
+                    <div class="title">
+                        <h2>WSBB certified</h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dicta! Qui libero
+                         eveniet illum earum, ad beatae ab blanditiis atque fugit nemo corporis magnam reiciendis, dolorem similique voluptas dolore itaque!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <h2 id="services-header">Services</h2>
+        <div class="container">
+            <div class="slider">
+                <div class="slides" style="--img: url('assets/squat.png')">
+                    <div class="content">
+                        <h2>Sports Performance</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit similique incidunt fugit iusto consectetur.</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('assets/skin.png')">
+                    <div class="content">
+                        <h2>Equipped Powerlifting</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit similique incidunt fugit iusto consectetur.</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('assets/leebob.png')">
+                    <div class="content">
+                        <h2>Raw Powerlifting</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit similique incidunt fugit iusto consectetur.</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('assets/rachel.png')">
+                    <div class="content">
+                        <h2>General Strength & Conditioning</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit similique incidunt fugit iusto consectetur.</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('assets/mono.png')">
+                    <div class="content">
+                        <h2>Slide 05</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit similique incidunt fugit iusto consectetur.</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('assets/belt-rack.png')">
+                    <div class="content">
+                        <h2>Slide 06</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam impedit similique incidunt fugit iusto consectetur.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="buttons">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="contact-info">
+            <h2 id="footer-header">Contact Us</h2>
+            <p>El Dorado, KS 67042</p>
+            <p>(316) 323-3376</p>
+            <a href="https://www.instagram.com/thegnarbell/" target="_blank" rel="noopener noreferrer"><img src="assets/ig.png" alt="Instagram Logo" id="ig-logo" ></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

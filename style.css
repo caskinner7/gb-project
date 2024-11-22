@@ -366,6 +366,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 8rem;
 }
 
 #services-header {
@@ -545,11 +546,118 @@ body {
     transition-delay: 0.5s;
 }
 
+/*  MEMBERSHIPS / CONTACT */
+#memberships-header {
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 6rem;
+    transition: all 1.5s ease;
+    position: absolute;
+    top: 179rem;
+    margin-left: 38%;
+    text-shadow:
+        1px 1px 0 white,   /* Right and down */
+        -1px -1px 0 white, /* Left and up */
+        -1px 1px 0 white,  /* Left and down */
+        1px -1px 0 white,  /* Right and up */
+        1px 0 0 white,     /* Right */
+        -1px 0 0 white,    /* Left */
+        0 1px 0 white,     /* Down */
+        0 -1px 0 white;    /* Up */
+    letter-spacing: 3px;
+}
+
+#memberships-header.enlarged {
+    color: white;
+    letter-spacing: 10px;
+}
+
+#contact-container {
+    position: absolute;
+    margin-top: 55rem;
+    width: 100%;
+    height: 40rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item {
+    width: 100%;
+    height: 550px;
+    max-width: 1120px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(240, 239, 239, 0.4);
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+
+.contact {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-form {
+   background: white;
+   margin-top: 1.5rem;
+}
+
+.first-text {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 70px;
+    color: goldenrod;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#contact-subhead {
+    font-size: 30px;
+    margin-top: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+#contact-text {
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.contact-img {
+ height: 150px;
+ width: 150px;
+}
+
+.third-text {
+    position: relative;
+    font-size: 25px;
+    top: 20px;
+    left: 20px;
+    padding-top: 10px;
+    color: goldenrod;
+    background-color: transparent;
+
+}
+
+
 
 /* FOOTER */
 .footer {
     position: absolute;
-    top: 300rem;
+    top: 230rem;
     height: 20rem;
     display: flex;
     font-family: "Bebas Neue", sans-serif;

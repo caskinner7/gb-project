@@ -7,7 +7,7 @@ function toggleMenu() {
 
 document.addEventListener('scroll', function() {
     const headerElement = document.querySelector('#about-header');
-    if (window.scrollY > 150) {
+    if (window.scrollY > 450) {
         headerElement.classList.add('enlarged');
     } else {
         headerElement.classList.remove('enlarged');
@@ -17,7 +17,16 @@ document.addEventListener('scroll', function() {
 
 document.addEventListener('scroll', function() {
     const headerElement = document.querySelector('#services-header');
-    if (window.scrollY > 600) {
+    if (window.scrollY > 1300) {
+        headerElement.classList.add('enlarged');
+    } else {
+        headerElement.classList.remove('enlarged');
+    }
+});
+
+document.addEventListener('scroll', function() {
+    const headerElement = document.querySelector('#memberships-header');
+    if (window.scrollY > 2200) {
         headerElement.classList.add('enlarged');
     } else {
         headerElement.classList.remove('enlarged');
@@ -56,3 +65,22 @@ prev.addEventListener('click', function() {
     let slides = document.querySelectorAll('.slides');
     slider.prepend(slides[slides.length - 1]);
 })
+
+
+//Navbar Scroll Behavior
+const navbarHeight = document.querySelector('nav').offsetHeight;
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetElement = document.querySelector(this.getAttribute('href'));
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - navbarHeight;
+
+    window.scrollBy({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  });
+});

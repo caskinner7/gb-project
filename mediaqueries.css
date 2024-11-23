@@ -246,7 +246,11 @@
         background-color: transparent;
     }
 
+    #contact-subhead {
+        font-size: 5vw;
+    }
+
     .footer {
-        top: 270vh;
+        top: 270%;
     }
 }

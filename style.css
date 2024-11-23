@@ -287,17 +287,17 @@ body {
     opacity: 1;
     max-height: 100%;
     transition-delay: 0.5s;
-    color: black;
+    color: white;
     font-weight: bold;
     text-shadow:
-        1px 1px 0 white,   /* Right and down */
-        -1px -1px 0 white, /* Left and up */
-        -1px 1px 0 white,  /* Left and down */
-        1px -1px 0 white,  /* Right and up */
-        1px 0 0 white,     /* Right */
-        -1px 0 0 white,    /* Left */
-        0 1px 0 white,     /* Down */
-        0 -1px 0 white;    /* Up */
+        1px 1px 0 black,   /* Right and down */
+        -1px -1px 0 black, /* Left and up */
+        -1px 1px 0 black,  /* Left and down */
+        1px -1px 0 black,  /* Right and up */
+        1px 0 0 black,     /* Right */
+        -1px 0 0 black,    /* Left */
+        0 1px 0 black,     /* Down */
+        0 -1px 0 black;    /* Up */
 }
 
 
@@ -358,6 +358,41 @@ body {
 .card:hover .title {
     all: unset;
 }
+
+.card.active {
+    width: 32vw;
+    box-shadow: 2px 11px 26px -4px white;
+    -webkit-box-shadow: 2px 11px 26px -4px white;
+    -moz-box-shadow: 2px 11px 26px -4px white;
+}
+
+.card.active h2 {
+    padding-bottom: 0.5em;
+    transform: unset;
+}
+
+.card.active p {
+    position: relative;
+    opacity: 1;
+    max-height: 100%;
+    transition-delay: 0.5s;
+    color: white;
+    font-weight: bold;
+    text-shadow:
+        1px 1px 0 black,   /* Right and down */
+        -1px -1px 0 black, /* Left and up */
+        -1px 1px 0 black,  /* Left and down */
+        1px -1px 0 black,  /* Right and up */
+        1px 0 0 black,     /* Right */
+        -1px 0 0 black,    /* Left */
+        0 1px 0 black,     /* Down */
+        0 -1px 0 black;    /* Up */
+}
+
+.card.active .title {
+    all: unset;
+}
+
 
 /* SERVICES */
 #services {
@@ -524,18 +559,18 @@ body {
 
 .content p {
     background-color: transparent;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 1.5em;
     text-shadow:
-        1px 1px 0 white,   /* Right and down */
-        -1px -1px 0 white, /* Left and up */
-        -1px 1px 0 white,  /* Left and down */
-        1px -1px 0 white,  /* Right and up */
-        1px 0 0 white,     /* Right */
-        -1px 0 0 white,    /* Left */
-        0 1px 0 white,     /* Down */
-        0 -1px 0 white;    /* Up */
+        1px 1px 0 black,   /* Right and down */
+        -1px -1px 0 black, /* Left and up */
+        -1px 1px 0 black,  /* Left and down */
+        1px -1px 0 black,  /* Right and up */
+        1px 0 0 black,     /* Right */
+        -1px 0 0 black,    /* Left */
+        0 1px 0 black,     /* Down */
+        0 -1px 0 black;    /* Up */
 }
 
 .slider .slides:nth-child(1) .content,
@@ -651,6 +686,30 @@ body {
     background-color: transparent;
 
 }
+
+
+.info-item, .info-item a {
+    background-color: white;
+}
+
+.info-label, .info-item a {
+    background-color: white;
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.1rem;
+}
+
+.info-item a:hover {
+    text-decoration: none;
+}
+
+.submit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 

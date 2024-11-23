@@ -84,3 +84,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+
+    // Toggle hover effect on click
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            // Remove "hover" state from all other cards
+            cards.forEach((c) => {
+                if (c !== card) {
+                    c.classList.remove("active");
+                }
+            });
+
+            // Toggle the current card's "hover" state
+            card.classList.toggle("active");
+        });
+    });
+
+    // Close cards when scrolled out of view
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    entry.target.classList.remove("active");
+                }
+            });
+        },
+        {
+            threshold: 0.2, // Trigger when 20% of the card is visible
+        }
+    );
+
+    // Observe each card
+    cards.forEach((card) => observer.observe(card));
+});

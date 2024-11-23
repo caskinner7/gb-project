@@ -214,4 +214,39 @@
         height: 10px;
         width: 10px;
     }
+
+    .card-body p {
+        font-size: 0.9rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .info-label, .info-item a {
+        font-size: 1.5rem;
+    }
+
+    .submit-form {
+        height: 7rem;
+        background-color: black;
+        margin-top: 0;
+    }
+
+    .info-item, .info-label, .info-item a{
+        background-color: black;
+    }
+
+    .info-label, .info-item a {
+        color: white;
+    }
+
+    #contact-container {
+        margin-top: 38rem;
+        background-color: transparent;
+    }
+
+    .footer {
+        top: 270vh;
+    }
 }

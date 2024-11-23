@@ -251,6 +251,6 @@
     }
 
     .footer {
-        top: 270%;
+        margin-top: -40vh;
     }
 }

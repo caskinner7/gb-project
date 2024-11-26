@@ -253,4 +253,10 @@
     .footer {
         margin-top: -40vh;
     }
+
+    #memberships-header {
+        font-size: 3rem;
+        margin-top: -105vh;
+        margin-left: 6rem;
+    }
 }

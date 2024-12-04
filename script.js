@@ -68,55 +68,75 @@ prev.addEventListener('click', function() {
 
 
 //Navbar Scroll Behavior
-const navbarHeight = document.querySelector('nav').offsetHeight;
+// const navbarHeight = document.querySelector('nav').offsetHeight;
+
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//   anchor.addEventListener('click', function(e) {
+//     e.preventDefault();
+
+//     const targetElement = document.querySelector(this.getAttribute('href'));
+//     const elementPosition = targetElement.getBoundingClientRect().top;
+//     const offsetPosition = elementPosition - navbarHeight;
+
+//     window.scrollBy({
+//       top: offsetPosition,
+//       behavior: 'smooth'
+//     });
+//   });
+// });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    const targetElement = document.querySelector(this.getAttribute('href'));
-    const elementPosition = targetElement.getBoundingClientRect().top;
-    const offsetPosition = elementPosition - navbarHeight;
+      const targetElement = document.querySelector(this.getAttribute('href'));
+      const elementPosition = targetElement.getBoundingClientRect().top;
 
-    window.scrollBy({
-      top: offsetPosition,
-      behavior: 'smooth'
+      // Dynamically calculate the offset based on screen width
+      const isMobileView = window.innerWidth <= 768; // Adjust breakpoint if needed
+      const navbarHeight = document.querySelector('nav').offsetHeight;
+
+      // Apply a different offset for mobile view
+      const offsetPosition = isMobileView
+        ? elementPosition - (navbarHeight + 180) // Add a buffer for mobile
+        : elementPosition - navbarHeight;
+
+      // Smooth scroll to the calculated position
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Optional: Close mobile menu after clicking
+      if (isMobileView) {
+        const mobileMenu = document.querySelector('.menu-links.open'); // Adjust selector if needed
+        if (mobileMenu) {
+          mobileMenu.classList.remove('open');
+        }
+      }
     });
   });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
 
-    // Toggle hover effect on click
     cards.forEach((card) => {
         card.addEventListener("click", () => {
-            // Remove "hover" state from all other cards
-            cards.forEach((c) => {
-                if (c !== card) {
-                    c.classList.remove("active");
-                }
-            });
+            console.log("Card clicked", card); // Check which card was clicked
 
-            // Toggle the current card's "hover" state
-            card.classList.toggle("active");
+            // If the clicked card is already active, deactivate it
+            if (card.classList.contains("active")) {
+                console.log("Removing active class");
+                card.classList.remove("active"); // Just remove 'active' to collapse
+                console.log("CLASSNAME", card.className)
+            } else {
+                // Deactivate all other cards
+                console.log("Removing active from other cards");
+                cards.forEach((c) => c.classList.remove("active"));
+                // Activate the clicked card
+                console.log("Adding active class");
+                card.classList.add("active");
+            }
         });
     });
-
-    // Close cards when scrolled out of view
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    entry.target.classList.remove("active");
-                }
-            });
-        },
-        {
-            threshold: 0.2, // Trigger when 20% of the card is visible
-        }
-    );
-
-    // Observe each card
-    cards.forEach((card) => observer.observe(card));
 });

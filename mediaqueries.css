@@ -71,14 +71,34 @@
     }
 
     .card {
-        width: 85vw;
+        min-width: 85vw;
         height: 10vh;
         transition: height 0.5s ease-in-out;
     }
 
-    .card:hover {
+    .card p {
+        display: none;
+        width: 100%;
+    }
+
+    .card.active {
         height: 40vh;
         width: 85vw;
+    }
+
+    .card.active p {
+        display: flex;
+        color: white;
+        font-weight: bold;
+        text-shadow:
+            1px 1px 0 black,   /* Right and down */
+            -1px -1px 0 black, /* Left and up */
+            -1px 1px 0 black,  /* Left and down */
+            1px -1px 0 black,  /* Right and up */
+            1px 0 0 black,     /* Right */
+            -1px 0 0 black,    /* Left */
+            0 1px 0 black,     /* Down */
+            0 -1px 0 black;    /* Up */
     }
 
     .title h2 {
@@ -100,6 +120,7 @@
         font-size: 3rem;
         margin-top: -60rem;
         margin-left: 6rem;
+        margin-bottom: 5vh;
     }
 
     #contact-container {
@@ -247,16 +268,27 @@
     }
 
     #contact-subhead {
-        font-size: 5vw;
+        font-size: 3.5vw;
+        width: 90%;
+        text-align: center;
     }
 
     .footer {
-        margin-top: -40vh;
+        position: static;
+        margin-top: 150vh;
     }
 
+    .membership-section {
+        margin-top: 62rem;
+        position: static;
+    }
+
+
     #memberships-header {
-        font-size: 3rem;
-        margin-top: -105vh;
-        margin-left: 6rem;
+        position: static;
+        transform: translateY(75vh);
+        display: flex;
+        align-items: center;
+
     }
 }

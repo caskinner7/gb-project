@@ -289,6 +289,27 @@
         transform: translateY(75vh);
         display: flex;
         align-items: center;
+    }
+}
 
+
+/* MOBILE VIEW */
+@media (max-width: 400px) {
+    .video-container {
+        transform: translateY(-0.9vh);
+    }
+    .footer {
+        position: static;
+        margin-top: 160vh;
+        height: 20vh;
+    }
+
+    .contact-info {
+        margin-top: 10vh;
+    }
+
+    #memberships-header {
+        position: static;
+        transform: translate(-17px, 660px);
     }
 }

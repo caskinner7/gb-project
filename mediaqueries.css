@@ -313,3 +313,15 @@
         transform: translate(-17px, 660px);
     }
 }
+
+
+@media (max-width: 375px) {
+    .footer {
+        position: static;
+        margin-top: 200vh;
+    }
+
+    #memberships-header {
+        transform: translate(-30px, 675px);
+    }
+}

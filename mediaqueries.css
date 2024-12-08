@@ -317,16 +317,15 @@
 @media (max-width: 375px) {
     .footer {
         position: static;
-        margin-top: 200vh;
+        margin-top: 205vh;
     }
 
-    /* .membership-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    } */
-
     #memberships-header {
-        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: -10rem;
+    }
+
+    #services {
+        margin-bottom: -45rem;
     }
 }
